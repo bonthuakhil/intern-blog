@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Insights Blog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Tech Insights</h1>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <nav id="nav-menu">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Main Layout -->
+    <div class="container">
+        <!-- Sidebar -->
+        <aside id="sidebar">
+            <h2>Categories</h2>
+            <ul>
+                <li><a href="#">Web Development</a></li>
+                <li><a href="#">Programming</a></li>
+                <li><a href="#">Tech Trends</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main>
+            <h2>Latest Blog Posts</h2>
+
+            <!-- Blog Post 1 -->
+            <div class="blog-post">
+                <img src="js-closures.jpg" alt="JavaScript Closures">
+                <h3>Understanding JavaScript Closures</h3>
+                <p>Closures are a fundamental concept in JavaScript that every developer should understand...</p>
+                <button class="read-more" onclick="toggleContent(this)">Read More</button>
+                <p class="hidden-content">
+                    A closure is created when a function retains access to variables from its outer scope even after execution.
+                    This makes closures useful for *data privacy, **event handlers, and **callback functions*. <br><br>
+                    *Example:*
+                    js
+                    function outerFunction() {
+                        let count = 0;
+                        return function innerFunction() {
+                            count++;
+                            console.log(count);
+                        };
+                    }
+                    const counter = outerFunction();
+                    counter(); // 1
+                    counter(); // 2
+                    
+                    <br>
+                    *Why Use Closures?*
+                    - To *maintain state* between function calls.
+                    - To create *private variables*.
+                    - To use *callbacks and asynchronous code effectively*.
+                </p>
+            </div>
+
+            <!-- Blog Post 2 -->
+            <div class="blog-post">
+                <img src="css-grid-vs-flexbox.jpg" alt="CSS Grid vs Flexbox">
+                <h3>CSS Grid vs Flexbox: Which One to Use?</h3>
+                <p>Both CSS Grid and Flexbox are powerful layout tools, but which one should you use?</p>
+                <button class="read-more" onclick="toggleContent(this)">Read More</button>
+                <p class="hidden-content">
+                    *Flexbox* is best for *one-dimensional layouts*, where elements are placed in a row or column.
+                    *CSS Grid* is best for *two-dimensional layouts*, where elements align both in rows and columns. <br><br>
+                    *Example using Flexbox:*
+                    css
+                    .container {
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                    
+                    *Example using CSS Grid:*
+                    css
+                    .container {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                    }
+                    
+                    <br>
+                    Use *Flexbox* for *navbars, small sections, and inline layouts*.  
+                    Use *Grid* for *full-page layouts, complex designs, and grids*.
+                </p>
+            </div>
+            <div class="blog-post">
+                <img src="ai-technology.jpg" alt="Future of AI">
+                <h2>The Future of AI: How Artificial Intelligence is Changing the World</h2>
+                <p class="short-text">
+                    AI is evolving rapidly, transforming industries like healthcare, finance, and automation...
+                </p>
+                <p class="full-text" style="display: none;">
+                    From intelligent chatbots and self-driving cars to AI-powered medical diagnoses, 
+                    this technology is reshaping the way we work and live. Machine learning and deep learning 
+                    algorithms are making AI smarter, allowing businesses to improve efficiency and decision-making. 
+                    However, ethical concerns such as data privacy and job displacement remain key challenges.
+                </p>
+                <a href="#" class="read-more-btn">Read More</a>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Tech Insights. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
